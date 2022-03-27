@@ -1,8 +1,8 @@
 import { Fragment, useState, lazy } from "react";
 import dataConstants, { statusArray } from "./constants/dataConstants";
-import { flattenDataObject, getAllTaskQueues } from "./utils/globalUtils";
+import { getAllTaskQueues, search } from "./utils/globalUtils";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { get, cloneDeep, isEmpty } from "lodash";
+import { get, cloneDeep, isEmpty, flatten, values } from "lodash";
 import "./styles/App.scss";
 import Button from "./components/Button";
 import Overlay from "./components/Overlay";
@@ -54,6 +54,9 @@ function App() {
     setCreateNewItemPopup(true);
     setCreateNewItemStatus(status);
   };
+  const finalData = getAllTaskQueues(
+    search(searchTerm, flatten(values(fragmentedData)), ["title", "status"])
+  );
   return (
     <Fragment>
       <div className="title">
@@ -92,7 +95,7 @@ function App() {
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                     >
-                      {get(fragmentedData, [status], []).map(
+                      {get(finalData, [status], []).map(
                         ({ id, title, status }, index) => {
                           return (
                             <Draggable key={id} draggableId={id} index={index}>

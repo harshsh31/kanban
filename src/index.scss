@@ -1,6 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+@import "./styles/mixin.scss";
 :root {
   --font: "Source Sans Pro", sans-serif;
+  --bodyBg: rgb(0, 121, 191);
+  --columnBg: #ebecf0;
+  --fontLarge: 16px;
+  --textColor: #172b4d;
+  --fontRegular: 14px;
+  --fontSmall: 12px;
+  --backgroundWhite: #ffffff;
+  --borderRadius: 3px;
+  --white: #ffffff;
+  --overlay: 0, 0, 0;
+  --negativeButtonColor: #e45a1b;
+  --border: #cee4e4;
 }
 * {
   padding: 0;
@@ -13,4 +26,31 @@ body,
 #root {
   width: 100%;
   height: 100%;
+}
+body {
+  background-color: var(--bodyBg);
+}
+
+ul {
+  list-style: none;
+}
+button,
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgba(var(--overlay), 0.5);
+  @include fadeIn(0.2s);
 }

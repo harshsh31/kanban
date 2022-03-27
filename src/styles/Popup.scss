@@ -1,0 +1,26 @@
+@import "./mixin.scss";
+.popup {
+  width: 50%;
+  background-color: var(--backgroundWhite);
+  border-radius: var(--borderRadius);
+  @include fadeIn(0.2s);
+  .header {
+    display: flex;
+    padding: 10px 20px;
+    font-size: var(--fontSizeRedular);
+    border-bottom: 1px solid var(--border);
+    background-color: var(--columnBg);
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  }
+  .body {
+    padding: 20px;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-top: 1px solid var(--border);
+    border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+  }
+}

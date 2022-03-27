@@ -1,0 +1,29 @@
+@import "./mixin.scss";
+.positive {
+  padding: 5px 10px;
+  border-radius: var(--borderRadius);
+  background-color: var(--backgroundWhite);
+  border: 1px solid var(--textColor);
+  color: var(--textColor);
+  cursor: pointer;
+  @include fadeIn(0.2s);
+  &:hover {
+    background-color: var(--bodyBg);
+    color: var(--white);
+    border-color: var(--bodyBg);
+  }
+}
+.negative {
+  padding: 5px 10px;
+  border-radius: var(--borderRadius);
+  background-color: var(--backgroundWhite);
+  border: 1px solid var(--negativeButtonColor);
+  color: var(--negativeButtonColor);
+  cursor: pointer;
+  @include fadeIn(0.2s);
+  &:hover {
+    background-color: var(--negativeButtonColor);
+    color: var(--white);
+    border-color: var(--negativeButtonColor);
+  }
+}

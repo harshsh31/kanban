@@ -1,0 +1,14 @@
+@import "./mixin.scss";
+.inputWrapper {
+  width: 100%;
+  .input {
+    width: 100%;
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    border-radius: var(--borderRadius);
+    @include fadeIn(0.2s);
+    &:focus {
+      border: 1px solid var(--bodyBg);
+    }
+  }
+}

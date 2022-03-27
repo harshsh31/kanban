@@ -1,0 +1,27 @@
+@mixin fadeIn($time) {
+  transition: all $time ease-out;
+  -webkit-transition: all $time ease-out;
+  animation: fadeIn $time ease-out;
+  -webkit-animation: fadeIn $time ease-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}

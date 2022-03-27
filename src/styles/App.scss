@@ -3,6 +3,8 @@
   padding: 20px;
   display: flex;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   .titleHeader {
     font-size: var(--fontLarge);
     color: var(--white);
@@ -19,13 +21,17 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
   .columnContainer {
     width: 24%;
     min-width: 250px;
     padding: 10px;
     background-color: var(--columnBg);
     border-radius: var(--borderRadius);
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
     height: 100%;
     &:last-child {
       margin-right: 0;
